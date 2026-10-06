@@ -1,6 +1,6 @@
 # SPEC 01 — Feed como home (`/`)
 
-> **Estado:** Borrador
+> **Estado:** Aprobado
 > **Depende de:** —
 > **Fecha:** 2026-10-06
 > **Objetivo:** Portar la pantalla Feed de `references/pantallas/feed.dc.html` a la ruta `/` como componentes React + Tailwind v4, con datos ficticios y sidebar responsive, sin navegación ni interactividad.
