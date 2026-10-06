@@ -8,6 +8,34 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+# open-daycare
 
-## MCPs
-- Playwright screenshots y cualquier cosa relacionada a playwright tienen que estar en la carpeta .playwright-mcp
+Next.js 16.3.8 (App Router) + React 19.2.8 + Tailwind v4. Greenfield: `app/` still holds the create-next-app boilerplate (`page.tsx`, default metadata).
+
+## Commands
+- `npm run dev` — dev server at http://localhost:3000
+- `npm run build` — production build; this is the only built-in typecheck step (no `typecheck` or `test` script exists)
+- `npm run lint` — ESLint flat config (`eslint-config-next`)
+- Ad-hoc typecheck: `npx tsc --noEmit`
+- No test framework is configured.
+
+## Design source of truth
+- `references/pantallas/*.dc.html` (16 screens) are the UI mockups to build from — do not invent layouts.
+- `references/screenshots/` holds rendered images of those same screens.
+- These `.dc.html` files are a generated runtime (`support.js` says "do not edit"). Port their structure/styles into App Router components; never ship them directly.
+
+## Conventions
+- Path alias `@/*` maps to the repo root (`./*`), not `src/`.
+- Tailwind v4 is configured in CSS (`app/globals.css`: `@import "tailwindcss"` + `@theme`); there is no `tailwind.config.js`.
+- Code in English, comments in Spanish.
+- Mockups use Fredoka/Nunito fonts while `app/layout.tsx` still loads Geist — reconcile when implementing screens.
+
+## Spec workflow
+- Feature work is driven by the `/spec` and `/spec-impl` skills in `.agents/skills/`.
+- Specs live in `specs/` (does not exist yet; first is `01-<slug>.md`).
+- `/spec-impl` only runs when a spec's status means "Approved" and creates branch `spec-NN-slug` (disable via `specs/.spec-config.yml` → `AutoCreateBranch: false`).
+- Never commit unless explicitly asked; the skills enforce this too.
+
+## MCP / tooling
+- Playwright screenshots, logs, and snapshots must go in `.playwright-mcp/` (gitignored).
+- Use Context7 for up-to-date framework/library docs instead of relying on training data.
