@@ -1,6 +1,6 @@
 # SPEC 01 — Feed como home (`/`)
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** —
 > **Fecha:** 2026-10-06
 > **Objetivo:** Portar la pantalla Feed de `references/pantallas/feed.dc.html` a la ruta `/` como componentes React + Tailwind v4, con datos ficticios y sidebar responsive, sin navegación ni interactividad.
@@ -110,16 +110,16 @@ Convenciones:
 
 ## Acceptance criteria
 
-- [ ] `npm run build` termina sin errores.
-- [ ] `npm run lint` no reporta errores.
-- [ ] `/` muestra sidebar, bloque de bienvenida, prompt de composición, divisor y 3 tarjetas.
-- [ ] Los 3 tipos se distinguen por color/etiqueta: LOGRO verde, ACTIVIDAD celeste, ANUNCIO azul.
-- [ ] Solo la tarjeta de actividad muestra el placeholder `Foto · pintando con témperas`.
-- [ ] El sidebar es fijo en desktop y se abre como drawer off-canvas con hamburguesa en `< md`.
-- [ ] Ningún enlace del sidebar ni de las tarjetas navega ni rompe la app.
-- [ ] No hay scroll horizontal a 375px de ancho.
-- [ ] Fredoka se aplica a los títulos y Nunito al cuerpo.
-- [ ] La consola no muestra errores ni warnings de React.
+- [x] `npm run build` termina sin errores.
+- [x] `npm run lint` no reporta errores.
+- [x] `/` muestra sidebar, bloque de bienvenida, prompt de composición, divisor y 3 tarjetas.
+- [x] Los 3 tipos se distinguen por color/etiqueta: LOGRO verde, ACTIVIDAD celeste, ANUNCIO azul.
+- [x] Solo la tarjeta de actividad muestra el placeholder `Foto · pintando con témperas`.
+- [x] El sidebar es fijo en desktop y se abre como drawer off-canvas con hamburguesa en `< md`.
+- [x] Ningún enlace del sidebar ni de las tarjetas navega ni rompe la app.
+- [x] No hay scroll horizontal a 375px de ancho.
+- [x] Fredoka se aplica a los títulos y Nunito al cuerpo.
+- [x] La consola no muestra errores ni warnings de React.
 
 ## Decisions
 

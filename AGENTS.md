@@ -32,9 +32,10 @@ Next.js 16.3.8 (App Router) + React 19.2.8 + Tailwind v4. Greenfield: `app/` sti
 
 ## Spec workflow
 - Feature work is driven by the `/spec` and `/spec-impl` skills in `.agents/skills/`.
-- Specs live in `specs/` (does not exist yet; first is `01-<slug>.md`).
+- Specs live in `specs/` (first is `01-<slug>.md`).
 - `/spec-impl` only runs when a spec's status means "Approved" and creates branch `spec-NN-slug` (disable via `specs/.spec-config.yml` → `AutoCreateBranch: false`).
-- Never commit unless explicitly asked; the skills enforce this too.
+- After `/spec-impl`, verify the acceptance criteria with the `spec-verify` agent (`.opencode/agent/spec-verify.md`); invoke it via `@spec-verify`. It runs build/lint, validates Next.js recommendations with Context7, compares screens with Playwright MCP, corrects failures, and ticks the spec's checkboxes.
+- Never commit unless explicitly asked; the skills and `spec-verify` enforce this too.
 
 ## MCP / tooling
 - Playwright screenshots, logs, and snapshots must go in `.playwright-mcp/` (gitignored).
