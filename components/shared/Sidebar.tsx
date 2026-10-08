@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ComponentType, SVGProps } from "react";
 import { currentUser, navItems, roomHeader } from "@/_data/mock";
 import {
@@ -18,6 +22,8 @@ const navIcons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
 };
 
 export function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="flex h-full w-[248px] shrink-0 flex-col border-r border-line bg-surface px-4 py-6">
       <a
@@ -48,19 +54,27 @@ export function Sidebar() {
       <nav className="flex flex-1 flex-col gap-1">
         {navItems.map((item) => {
           const Icon = navIcons[item.id];
+          const isActive =
+            pathname === item.href ||
+            pathname.startsWith(`${item.href}/`);
+          const className = isActive
+            ? "flex items-center gap-3 rounded-xl bg-brand-soft px-3 py-[11px] text-[14.5px] font-extrabold text-brand"
+            : "flex items-center gap-3 rounded-xl px-3 py-[11px] text-[14.5px] font-semibold text-nav";
+
+          if (item.href === "#") {
+            return (
+              <button key={item.id} type="button" className={className}>
+                {Icon ? <Icon /> : null}
+                {item.label}
+              </button>
+            );
+          }
+
           return (
-            <button
-              key={item.id}
-              type="button"
-              className={
-                item.active
-                  ? "flex items-center gap-3 rounded-xl bg-brand-soft px-3 py-[11px] text-[14.5px] font-extrabold text-brand"
-                  : "flex items-center gap-3 rounded-xl px-3 py-[11px] text-[14.5px] font-semibold text-nav"
-              }
-            >
+            <Link key={item.id} href={item.href} className={className}>
               {Icon ? <Icon /> : null}
               {item.label}
-            </button>
+            </Link>
           );
         })}
       </nav>

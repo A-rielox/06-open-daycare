@@ -31,7 +31,7 @@ export interface Post {
 export interface NavItem {
   id: string;
   label: string;
-  active: boolean;
+  href: string;
 }
 
 export interface PostKindStyle {
@@ -57,10 +57,10 @@ export const roomHeader: RoomHeader = {
 };
 
 export const navItems: NavItem[] = [
-  { id: "feed", label: "Feed", active: true },
-  { id: "children", label: "Niños", active: false },
-  { id: "notices", label: "Avisos", active: false },
-  { id: "account", label: "Mi cuenta", active: false },
+  { id: "feed", label: "Feed", href: "/" },
+  { id: "children", label: "Niños", href: "/kids" },
+  { id: "notices", label: "Avisos", href: "#" },
+  { id: "account", label: "Mi cuenta", href: "#" },
 ];
 
 const mateo: Author = {
