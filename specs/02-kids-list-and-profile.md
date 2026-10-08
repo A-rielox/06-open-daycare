@@ -96,21 +96,21 @@ Convenciones:
 
 ## Acceptance criteria
 
-- [ ] `npm run build` termina sin errores.
-- [ ] `npm run lint` no reporta errores.
-- [ ] `/kids` muestra exactamente 8 tarjetas en grilla de 2 columnas en desktop.
-- [ ] Escribir en el buscador filtra por nombre sin distinguir mayúsculas ni acentos.
-- [ ] Una búsqueda sin resultados muestra el estado vacío y no rompe el layout.
-- [ ] Mateo muestra badge "MANÍ"; Tomás "LACTOSA"; Valentina "VINCULAR"; el resto chevron.
-- [ ] Clic en una tarjeta navega a `/kids/[id]` con el niño correcto.
-- [ ] `/kids/mateo` reproduce `references/pantallas/perfil-nino.dc.html`: volver, identidad, banner de alergia, ficha y columna derecha.
-- [ ] En `/kids/[id]` sin alergias el banner no se renderiza.
-- [ ] "Volver a Niños" navega a `/kids`.
-- [ ] `/kids/zzz` (id inexistente) muestra la 404 sin errores.
-- [ ] El Sidebar resalta "Niños" en `/kids` y `/kids/[id]`, y "Feed" en `/`.
-- [ ] Los botones "Agregar niño", "Editar", "Resumen del día" y "Vincular otro padre" no navegan ni rompen la app.
-- [ ] No hay scroll horizontal a 375px de ancho en ninguna ruta.
-- [ ] La consola no muestra errores ni warnings de React.
+- [x] `npm run build` termina sin errores.
+- [x] `npm run lint` no reporta errores.
+- [x] `/kids` muestra exactamente 8 tarjetas en grilla de 2 columnas en desktop.
+- [x] Escribir en el buscador filtra por nombre sin distinguir mayúsculas ni acentos.
+- [x] Una búsqueda sin resultados muestra el estado vacío y no rompe el layout.
+- [x] Mateo muestra badge "MANÍ"; Tomás "LACTOSA"; Valentina "VINCULAR"; el resto chevron.
+- [x] Clic en una tarjeta navega a `/kids/[id]` con el niño correcto.
+- [x] `/kids/mateo` reproduce `references/pantallas/perfil-nino.dc.html`: volver, identidad, banner de alergia, ficha y columna derecha.
+- [x] En `/kids/[id]` sin alergias el banner no se renderiza.
+- [x] "Volver a Niños" navega a `/kids`.
+- [x] `/kids/zzz` (id inexistente) muestra la 404 sin errores.
+- [x] El Sidebar resalta "Niños" en `/kids` y `/kids/[id]`, y "Feed" en `/`.
+- [x] Los botones "Agregar niño", "Editar", "Resumen del día" y "Vincular otro padre" no navegan ni rompen la app.
+- [x] No hay scroll horizontal a 375px de ancho en ninguna ruta.
+- [x] La consola no muestra errores ni warnings de React.
 
 ## Decisions
 
